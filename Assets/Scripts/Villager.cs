@@ -21,6 +21,15 @@ public class Villager : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter(Collider col)
+	{
+		Debug.Log(col.gameObject.name);
+		if (col.gameObject.tag == "Volcano")
+		{
+			//col.gameObject.
+		}
+	}
+
 	public void SetVolcano(GameObject targetObject)
 	{
 		volcano = targetObject;

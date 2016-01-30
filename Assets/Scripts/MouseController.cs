@@ -25,7 +25,7 @@ public class MouseController : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, 100))
 			{
-				Debug.Log(hit.transform.gameObject.name);
+				Debug.Log(hit.transform.gameObject.♠sname);
 				if (hit.transform.gameObject.tag == "Volcano")
 				{
 					Instantiate(villager, village.transform.position, Quaternion.identity);
