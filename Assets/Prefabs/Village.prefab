@@ -28,7 +28,6 @@ GameObject:
   - 33: {fileID: 3328374}
   - 135: {fileID: 13543230}
   - 23: {fileID: 2381120}
-  - 114: {fileID: 11465250}
   - 114: {fileID: 11440434}
   m_Layer: 0
   m_Name: Village
@@ -128,18 +127,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtNumResources: {fileID: 11434522}
---- !u!114 &11465250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cd3156e3f616a848a3638a6d7a4fd27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTimerLength: 1
 --- !u!135 &13543230
 SphereCollider:
   m_ObjectHideFlags: 1

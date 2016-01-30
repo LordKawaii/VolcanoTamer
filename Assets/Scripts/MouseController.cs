@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MouseController : MonoBehaviour {
-	public VillagerCon villager;
+	public GameObject villager;
 	public GameObject volcano;
 	public GameObject village;
 
@@ -25,9 +25,10 @@ public class MouseController : MonoBehaviour {
 
 			if (Physics.Raycast(ray, out hit, 100))
 			{
-				Debug.Log(hit.transform.gameObject.♠sname);
 				if (hit.transform.gameObject.tag == "Volcano")
 				{
+                    Debug.Log(hit.transform.gameObject.name);
+
                     VillagerCon villagerCon;
                     GameObject tempVillager;
                     tempVillager = Instantiate(villager, village.transform.position, Quaternion.identity) as GameObject;
