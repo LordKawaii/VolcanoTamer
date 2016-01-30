@@ -22,7 +22,17 @@ public class VillagerCon : MonoBehaviour {
         }
     }
 
-    public void SetVolcano(GameObject targetObject)
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.gameObject.tag == "Volcano")
+		{
+			VolcanoController volcano = col.gameObject.GetComponent< VolcanoController >();
+			speed = 0; // stop moving when we get to volcano
+			volcano.AddVillager(gameObject);
+		}
+	}
+
+	public void SetVolcano(GameObject targetObject)
     {
         volcano = targetObject;
     }

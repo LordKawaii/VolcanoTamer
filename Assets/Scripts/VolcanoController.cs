@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public class VolcanoController : MonoBehaviour {
 
-	public List<VillagerCon> villagers;
+	public List<GameObject> villagers;
 
 	// Use this for initialization
 	void Start ()
 	{
-		villagers = new List<VillagerCon>();
+		villagers = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class VolcanoController : MonoBehaviour {
 	
 	}
 
-	void AddVillager(VillagerCon villager)
+	public void AddVillager(GameObject villager)
 	{
 		villagers.Add(villager);
 	}
