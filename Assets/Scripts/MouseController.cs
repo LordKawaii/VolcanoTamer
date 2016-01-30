@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MouseController : MonoBehaviour {
-	public Villager villager;
+	public VillagerCon villager;
 	public GameObject volcano;
 	public GameObject village;
 
@@ -28,8 +28,11 @@ public class MouseController : MonoBehaviour {
 				Debug.Log(hit.transform.gameObject.name);
 				if (hit.transform.gameObject.tag == "Volcano")
 				{
-					Instantiate(villager, village.transform.position, Quaternion.identity);
-					villager.SetVolcano(hit.transform.gameObject);
+                    VillagerCon villagerCon;
+                    GameObject tempVillager;
+                    tempVillager = Instantiate(villager, village.transform.position, Quaternion.identity) as GameObject;
+                    villagerCon = tempVillager.GetComponent<VillagerCon>();
+                    villagerCon.SetVolcano(hit.transform.gameObject);
 				}
 			}
 		}

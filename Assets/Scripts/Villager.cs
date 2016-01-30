@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Villager : MonoBehaviour {
+public class VillagerController : MonoBehaviour {
 	public GameObject volcano = null;
 	public GameObject village = null;
 	float speed = 5.0f; // move speed
