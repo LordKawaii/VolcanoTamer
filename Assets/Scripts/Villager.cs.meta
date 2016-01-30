@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 504b28814f7b3c541949d55bd68ec3f2
-timeCreated: 1454180351
+guid: a04a3c48d79442147a1790d5c9dd3b16
+timeCreated: 1454181619
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - villager: {fileID: 482976, guid: 3bf17ead1b958714c94082b75fcac7e4, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
