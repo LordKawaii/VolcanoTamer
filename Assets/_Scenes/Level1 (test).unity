@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 504b28814f7b3c541949d55bd68ec3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  villager: {fileID: 169928, guid: 3bf17ead1b958714c94082b75fcac7e4, type: 2}
+  villager: {fileID: 108178, guid: a933756dbdb40924984527c299ec0b81, type: 2}
   volcano: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
   village: {fileID: 194922, guid: 522903ee569f217418c0435539c9f292, type: 2}
 --- !u!1001 &281168179
@@ -627,23 +627,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448534, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
       propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 448534, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 448534, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 448534, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
-      propertyPath: m_TagString
-      value: Volcano
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
       propertyPath: m_Name

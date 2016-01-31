@@ -6,6 +6,10 @@ public class VillagerCon : MonoBehaviour {
     public GameObject volcano = null;
     public GameObject village = null;
     float speed = 5.0f; // move speed
+    bool isDead = false;
+
+    public float fDeathDelay = 1;
+    float deathTimer = 0;
 
     // Use this for initialization
     void Start()
@@ -20,6 +24,12 @@ public class VillagerCon : MonoBehaviour {
         {
             transform.position = Vector3.MoveTowards(transform.position, volcano.transform.position, speed * Time.deltaTime);
         }
+
+        if (isDead && Time.time >= deathTimer)
+        {
+            Destroy(gameObject);
+        }
+       
     }
 
 	void OnTriggerEnter(Collider col)
@@ -39,9 +49,15 @@ public class VillagerCon : MonoBehaviour {
 
 	public void Kill()
 	{
-		Renderer rend = GetComponent<Renderer>();
-		rend.material.color = Color.red;
+        //Renderer rend = GetComponent<Renderer>();
+        //rend.material.color = Color.red;
+        // a second later delete and remove from volcano
 
-		// a second later delete and remove from volcano
-	}
+        //Remove Villager and play partical effects
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<ParticleSystem>().Play();
+        isDead = true;
+        deathTimer = Time.time + fDeathDelay;
+    }
+
 }

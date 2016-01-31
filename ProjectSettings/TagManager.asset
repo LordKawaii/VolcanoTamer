@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Volcano
   - Villager
+  - Village
   layers:
   - Default
   - TransparentFX
