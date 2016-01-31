@@ -65,7 +65,6 @@ public class VolcanoController : MonoBehaviour {
 
 	void Erupt()
 	{
-		Debug.Log("Eruption!");
         hasErupted = true;
         eruptionResetTimer = Time.time + eruptionResetTimerLength;
 
@@ -85,7 +84,6 @@ public class VolcanoController : MonoBehaviour {
 	{
 		if(Random.value < 0.005 && villagers.Count > 0)
 		{
-			Debug.Log(Random.value);
 			VillagerCon villager = villagers[0].GetComponent<VillagerCon>();
 			villager.Kill();
 			villagers.RemoveAt(0);
