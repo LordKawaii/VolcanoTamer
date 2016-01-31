@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volcano: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
   village: {fileID: 194922, guid: 522903ee569f217418c0435539c9f292, type: 2}
+  fDeathDelay: 1
 --- !u!136 &13653202
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -139,7 +140,7 @@ ParticleSystem:
   randomSeed: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   moveWithTransform: 1
   scalingMode: 1
   InitialModule:
@@ -1638,7 +1639,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108178}

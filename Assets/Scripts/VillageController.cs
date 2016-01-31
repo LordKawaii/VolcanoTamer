@@ -6,7 +6,7 @@ public class VillageController : MonoBehaviour {
 
     VillageUIContoller uiController;
     int resources = 0;
-    public int maxResources = 3;
+    public int maxResources = 4;
 
     public float spawnTimerLength = 1;
     float spawnTimer;
