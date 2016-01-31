@@ -54,7 +54,9 @@ public class VolcanoController : MonoBehaviour {
 			}
 			rend.material.color = Color.Lerp(Color.green, Color.red, eruptionProgress);
 		}
-	}
+
+        setSoundLevel();
+    }
 
 	void Erupt()
 	{
@@ -70,6 +72,11 @@ public class VolcanoController : MonoBehaviour {
 			villagers.RemoveAt(n);
 		}
 	}
+
+    void setSoundLevel()
+    {
+        gameObject.GetComponent<AudioSource>().volume = eruptionProgress;
+    }
 
 
 	public void AddVillager(GameObject villager)

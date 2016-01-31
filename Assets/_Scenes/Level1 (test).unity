@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 165992973}
   - 114: {fileID: 165992974}
+  - 114: {fileID: 165992975}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -127,6 +128,18 @@ MonoBehaviour:
   villager: {fileID: 108178, guid: a933756dbdb40924984527c299ec0b81, type: 2}
   volcano: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
   village: {fileID: 194922, guid: 522903ee569f217418c0435539c9f292, type: 2}
+--- !u!114 &165992975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 165992972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a5ccccbb7072f41961856b9c97b74d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 324683867}
 --- !u!1001 &281168179
 Prefab:
   m_ObjectHideFlags: 0
