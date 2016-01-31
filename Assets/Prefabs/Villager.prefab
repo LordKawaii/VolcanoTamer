@@ -8,13 +8,29 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412816}
-  - 136: {fileID: 13653202}
   - 114: {fileID: 11439788}
-  - 199: {fileID: 19956750}
-  - 198: {fileID: 19857866}
   - 212: {fileID: 21247558}
+  - 54: {fileID: 5422008}
+  - 65: {fileID: 6584300}
   m_Layer: 0
   m_Name: Villager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &167394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414830}
+  - 199: {fileID: 19974714}
+  - 198: {fileID: 19800276}
+  m_Layer: 0
+  m_Name: Particals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +45,49 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.23, z: -2.99}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 414830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &414830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167394}
+  m_LocalRotation: {x: -0.7050057, y: 0, z: 0, w: 0.70920163}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 412816}
+  m_RootOrder: 0
+--- !u!54 &5422008
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108178}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!65 &6584300
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42118582, y: 0.17048508, z: 0.31729674}
+  m_Center: {x: -0.2894072, y: -0.41475654, z: -0.0036728382}
 --- !u!114 &11439788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46,25 +102,12 @@ MonoBehaviour:
   volcano: {fileID: 181632, guid: 6f2df28899f21a040b47d80f3320acb4, type: 2}
   village: {fileID: 194922, guid: 522903ee569f217418c0435539c9f292, type: 2}
   fDeathDelay: 1
---- !u!136 &13653202
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!198 &19857866
+--- !u!198 &19800276
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108178}
+  m_GameObject: {fileID: 167394}
   serializedVersion: 2
   lengthInSec: 0.5
   startDelay:
@@ -148,7 +191,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 7.31
+      scalar: 6.1986103
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -425,7 +468,7 @@ ParticleSystem:
     enabled: 1
     type: 4
     radius: 0.1461029
-    angle: 22.506472
+    angle: 20.63
     length: 5
     boxX: 1
     boxY: 1
@@ -1558,12 +1601,12 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
---- !u!199 &19956750
+--- !u!199 &19974714
 ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108178}
+  m_GameObject: {fileID: 167394}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -1647,6 +1690,14 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

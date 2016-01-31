@@ -29,6 +29,11 @@ public class VillagerCon : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        if (Vector3.Distance(volcano.transform.position, transform.position) > 1)
+        {
+
+        }
        
     }
 
@@ -54,8 +59,8 @@ public class VillagerCon : MonoBehaviour {
         // a second later delete and remove from volcano
 
         //Remove Villager and play partical effects
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<ParticleSystem>().Play();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
         isDead = true;
         deathTimer = Time.time + fDeathDelay;
     }
