@@ -21,6 +21,7 @@ public class VolcanoController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 		eruptionTimer = Time.time + eruptionTimerLength;
 
 		villagers = new List<GameObject>();
@@ -64,6 +65,9 @@ public class VolcanoController : MonoBehaviour {
 		Debug.Log("Eruption!");
         hasErupted = true;
         eruptionResetTimer = Time.time + eruptionResetTimerLength;
+
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
 
         // Kill All villagers at volcano
         for (int n = 0; n < villagers.Count; n++)
