@@ -76,4 +76,9 @@ public class VolcanoController : MonoBehaviour {
 	{
 		villagers.Add(villager);
 	}
+
+    public bool CheckForEruption()
+    {
+        return hasErupted;
+    }
 }
