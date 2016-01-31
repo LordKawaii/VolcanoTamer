@@ -9,6 +9,9 @@ public class VillagerCon : MonoBehaviour {
     bool isDead = false;
     bool hasHitVolcano = false;
 
+    float volcanoRandX;
+    float volcanoRandY;
+    
     public float fDeathDelay = 1;
     float deathTimer = 0;
 
@@ -16,6 +19,7 @@ public class VillagerCon : MonoBehaviour {
     void Start()
     {
         village = GameObject.Find("Village");
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
 
     // Update is called once per frame
@@ -23,7 +27,8 @@ public class VillagerCon : MonoBehaviour {
     {
         if (volcano)
         {
-            transform.position = Vector3.MoveTowards(transform.position, volcano.transform.position, speed * Time.deltaTime);
+
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(volcanoRandX, volcanoRandY, volcano.transform.position.z), speed * Time.deltaTime);
         }
 
         if (isDead && Time.time >= deathTimer)
@@ -63,6 +68,8 @@ public class VillagerCon : MonoBehaviour {
 	public void SetVolcano(GameObject targetObject)
     {
         volcano = targetObject;
+        volcanoRandX = volcano.transform.position.x + Random.Range(-.5f, .5f);
+        volcanoRandY = volcano.transform.position.y + Random.Range(-.5f, .5f);
     }
 
 	public void Kill()

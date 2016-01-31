@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
 	bool hasWon = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         volcanos = new List<VolcanoController>();
         foreach (GameObject volcano in GameObject.FindGameObjectsWithTag("Volcano"))
         {
