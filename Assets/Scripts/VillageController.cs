@@ -6,6 +6,7 @@ public class VillageController : MonoBehaviour {
 
     VillageUIContoller uiController;
     int resources = 0;
+    public int maxResources = 3;
 
     public float spawnTimerLength = 1;
     float spawnTimer;
@@ -17,15 +18,14 @@ public class VillageController : MonoBehaviour {
 
         uiController = gameObject.GetComponent<VillageUIContoller>();
         uiController.SetResources(resources);
-
     }
 
     void Update()
     {
-        if (Time.time >= spawnTimer)
+        if (Time.time >= spawnTimer && resources < maxResources)
         {
             spawnTimer = Time.time + spawnTimerLength;
-            resources++;
+				resources++;
         }
         uiController.SetResources(resources);
     }
@@ -37,6 +37,9 @@ public class VillageController : MonoBehaviour {
 
     public void DeclementeResourceCount()
     {
+		  // restart timer if we were at max resources
+        if(resources == maxResources)
+           spawnTimer = Time.time + spawnTimerLength;
         resources--;
     }
 }
