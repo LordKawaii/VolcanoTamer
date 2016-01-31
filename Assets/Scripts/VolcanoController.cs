@@ -57,7 +57,10 @@ public class VolcanoController : MonoBehaviour {
 		}
 
         setSoundLevel();
-    }
+
+		if(!isTamed)
+			RandomlyKillVillager();
+	 }
 
 	void Erupt()
 	{
@@ -71,6 +74,17 @@ public class VolcanoController : MonoBehaviour {
 			VillagerCon villager = villagers[n].GetComponent<VillagerCon>();
 			villager.Kill();
 			villagers.RemoveAt(n);
+		}
+	}
+
+	void RandomlyKillVillager()
+	{
+		if(Random.value < 0.005 && villagers.Count > 0)
+		{
+			Debug.Log(Random.value);
+			VillagerCon villager = villagers[0].GetComponent<VillagerCon>();
+			villager.Kill();
+			villagers.RemoveAt(0);
 		}
 	}
 
