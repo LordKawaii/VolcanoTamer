@@ -26,7 +26,17 @@ public class VillageController : MonoBehaviour {
         {
             spawnTimer = Time.time + spawnTimerLength;
             resources++;
-            uiController.SetResources(resources);
         }
+        uiController.SetResources(resources);
+    }
+
+    public int GetResourceCount()
+    {
+        return resources;
+    }
+
+    public void DeclementeResourceCount()
+    {
+        resources--;
     }
 }
