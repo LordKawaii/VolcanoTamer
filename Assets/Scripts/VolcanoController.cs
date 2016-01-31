@@ -7,7 +7,9 @@ public class VolcanoController : MonoBehaviour {
 	public List<GameObject> villagers;
 	public Color lerpedColor = Color.green;
 
-	float eruptionProgress = 0.5f;
+	float eruptionProgress = 0.5f; // progress towards eruption 0 to 1
+	float eruptionRate = 0.002f; // rate eruption increase over time
+	float villagerAppeasementRate = 0.001f; // rate that each villager brings down eruption
 
 	// Use this for initialization
 	void Start ()
@@ -20,8 +22,8 @@ public class VolcanoController : MonoBehaviour {
 	{
 		Renderer rend = GetComponent<Renderer>();
 
-		eruptionProgress += 0.01f;
-		eruptionProgress -= villagers.Count * 0.02f;
+		eruptionProgress += eruptionRate;
+		eruptionProgress -= villagers.Count * villagerAppeasementRate;
 		if (eruptionProgress < 0)
 		{
 			eruptionProgress = 0.0f;
@@ -31,13 +33,24 @@ public class VolcanoController : MonoBehaviour {
 		if (eruptionProgress >= 1.0f)
 		{
 			eruptionProgress = 1.0f;
-			//transform.localScale += new Vector3(0.1F, 0.1F, 0.1F);
-			Debug.Log("Eruption!");
+			Erupt();
 		}
-
 		rend.material.color = Color.Lerp(Color.green, Color.red, eruptionProgress);
-
 	}
+
+	void Erupt()
+	{
+		Debug.Log("Eruption!");
+
+		// Kill All villagers at volcano
+		for (int n = 0; n < villagers.Count; n++)
+		{
+			VillagerCon villager = villagers[n].GetComponent<VillagerCon>();
+			villager.Kill();
+			villagers.RemoveAt(n);
+		}
+	}
+
 
 	public void AddVillager(GameObject villager)
 	{

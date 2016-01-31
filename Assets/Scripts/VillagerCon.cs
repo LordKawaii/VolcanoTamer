@@ -36,4 +36,12 @@ public class VillagerCon : MonoBehaviour {
     {
         volcano = targetObject;
     }
+
+	public void Kill()
+	{
+		Renderer rend = GetComponent<Renderer>();
+		rend.material.color = Color.red;
+
+		// a second later delete and remove from volcano
+	}
 }
