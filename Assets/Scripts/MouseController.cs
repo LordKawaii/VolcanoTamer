@@ -5,14 +5,16 @@ public class MouseController : MonoBehaviour {
 	public GameObject villager;
 	public GameObject volcano;
 	public GameObject village;
+	public GameController gameController;
 
-    VillageController villageCon;
+	VillageController villageCon;
 
 
 	// Use this for initialization
 	void Start ()
 	{
-        villageCon = GameObject.FindGameObjectWithTag("Village").GetComponent<VillageController>();
+		villageCon = GameObject.FindGameObjectWithTag("Village").GetComponent<VillageController>();
+		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		village = GameObject.Find("Village");
 	}
 	
@@ -20,7 +22,7 @@ public class MouseController : MonoBehaviour {
 	void Update ()
 	{
 		
-		if (Input.GetMouseButtonDown(0) && villageCon.GetResourceCount() > 0)
+		if (Input.GetMouseButtonDown(0) && villageCon.GetResourceCount() > 0 && !gameController.IsGameOver())
 		{
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;

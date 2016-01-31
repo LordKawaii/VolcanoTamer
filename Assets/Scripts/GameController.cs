@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 
     List<VolcanoController> volcanos;
     bool hasLost = false;
+	bool hasWon = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,27 +27,58 @@ public class GameController : MonoBehaviour {
             gameOverText.enabled = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && hasLost)
+			if (CheckForWin())
+			{
+				hasWon = true;
+			gameOverText.text = "You've won!\nPress R to restart!";
+				gameOverText.enabled = true;
+			}
+
+		if (Input.GetKeyDown(KeyCode.R) && (hasLost || hasWon))
             Application.LoadLevel(0);
 
     }
 
     bool CheckForLose()
     {
-        int numVolcanosTamedToLose = volcanos.Count;
-        int numVolcanosTamed = 0;
+        int numVolcanosEruptedToLose = volcanos.Count;
+        int numVolcanosErupted = 0;
 
         foreach (VolcanoController volcano in volcanos)
         {
             if (volcano.CheckForEruption())
             {
-                numVolcanosTamed++;
+					numVolcanosErupted++;
             }
         }
 
-        if (numVolcanosTamed == numVolcanosTamedToLose)
+        if (numVolcanosErupted == numVolcanosEruptedToLose)
             return true;
 
         return false;
     }
+
+	bool CheckForWin()
+	{
+		int numVolcanosTamedToWin = volcanos.Count;
+		int numVolcanosTamed = 0;
+
+		foreach (VolcanoController volcano in volcanos)
+		{
+			if (volcano.CheckForTamed())
+			{
+				numVolcanosTamed++;
+			}
+		}
+
+		if (numVolcanosTamed == numVolcanosTamedToWin)
+			return true;
+
+		return false;
+	}
+
+	public bool IsGameOver()
+	{
+		return hasWon || hasLost;
+	}
 }

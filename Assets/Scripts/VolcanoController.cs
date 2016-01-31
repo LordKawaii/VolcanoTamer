@@ -14,6 +14,7 @@ public class VolcanoController : MonoBehaviour {
 	public float eruptionTimerLength = 0.1f;
 	float eruptionTimer;
     bool hasErupted = false;
+	bool isTamed = false;
     public float eruptionResetTimerLength = .5f;
     float eruptionResetTimer;
 
@@ -45,7 +46,7 @@ public class VolcanoController : MonoBehaviour {
 			if (eruptionProgress < 0)
 			{
 				eruptionProgress = 0.0f;
-				Debug.Log("Safe");
+				isTamed = true;
 			}
 
 			if (eruptionProgress >= 1.0f)
@@ -91,4 +92,9 @@ public class VolcanoController : MonoBehaviour {
     {
         return hasErupted;
     }
+
+	public bool CheckForTamed()
+	{
+		return isTamed;
+	}
 }
