@@ -19,7 +19,7 @@ public class VillagerCon : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (volcano)
         {
@@ -31,7 +31,7 @@ public class VillagerCon : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (Vector3.Distance(volcano.transform.position, transform.position) > 3f)
+        if (Vector3.Distance(volcano.transform.position, transform.position) > .2f)
         {
             Debug.Log("Speed: " + speed);
             speed = 5f;
