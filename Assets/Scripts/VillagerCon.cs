@@ -38,16 +38,10 @@ public class VillagerCon : MonoBehaviour {
 
         if (Vector3.Distance(volcano.transform.position, transform.position) > .2f)
         {
-            Debug.Log("Speed: " + speed);
             speed = 5f;
             if (hasHitVolcano)
             {
                 gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
-            }
-
-            if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0);
-            {
-                Debug.Log("Im moving to fast");
             }
         }
        
