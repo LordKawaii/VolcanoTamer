@@ -62,8 +62,8 @@ public class VillagerCon : MonoBehaviour {
 	public void SetVolcano(GameObject targetObject)
     {
         volcano = targetObject;
-        volcanoRandX = volcano.transform.position.x + Random.Range(-.5f, .5f);
-        volcanoRandY = volcano.transform.position.y + Random.Range(-.5f, .5f);
+        volcanoRandX = volcano.transform.position.x + Random.Range(-1.4f, 1.4f);
+        volcanoRandY = volcano.transform.position.y + Random.Range(-1f, -0.5f);
     }
 
 	public void Kill()
