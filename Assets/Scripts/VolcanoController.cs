@@ -81,8 +81,11 @@ public class VolcanoController : MonoBehaviour {
 
 	public void AddVillager(GameObject villager)
 	{
-		villagers.Add(villager);
-	}
+        if (!villagers.Contains(villager))
+        { 
+		    villagers.Add(villager);
+        }
+    }
 
     public bool CheckForEruption()
     {

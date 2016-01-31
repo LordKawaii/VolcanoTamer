@@ -7,6 +7,7 @@ public class VillagerCon : MonoBehaviour {
     public GameObject village = null;
     float speed = 5.0f; // move speed
     bool isDead = false;
+    bool hasHitVolcano = false;
 
     public float fDeathDelay = 1;
     float deathTimer = 0;
@@ -30,9 +31,19 @@ public class VillagerCon : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        if (Vector3.Distance(volcano.transform.position, transform.position) > 1)
+        if (Vector3.Distance(volcano.transform.position, transform.position) > 3f)
         {
+            Debug.Log("Speed: " + speed);
+            speed = 5f;
+            if (hasHitVolcano)
+            {
+                gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0);
+            }
 
+            if (gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0);
+            {
+                Debug.Log("Im moving to fast");
+            }
         }
        
     }
@@ -41,11 +52,13 @@ public class VillagerCon : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Volcano")
 		{
-			VolcanoController volcano = col.gameObject.GetComponent< VolcanoController >();
+			VolcanoController volcano = col.gameObject.GetComponent<VolcanoController>();
 			speed = 0; // stop moving when we get to volcano
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0);
 			volcano.AddVillager(gameObject);
-		}
-	}
+            hasHitVolcano = true;
+        }
+    }
 
 	public void SetVolcano(GameObject targetObject)
     {
